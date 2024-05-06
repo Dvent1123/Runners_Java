@@ -28,7 +28,7 @@ public class RunController {
 	
 	@GetMapping("/{id}")
 	Run findByID(@PathVariable Integer id) {
-		Optional<Run> run = runRepository.findByID(id);
+		Optional<Run> run = runRepository.findById(id);
 		if(run.isEmpty()) {
 			throw new RunNotFoundException();
 		}
@@ -56,24 +56,6 @@ public class RunController {
 	void delete(@PathVariable Integer id) {
 		runRepository.delete(id);
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	
